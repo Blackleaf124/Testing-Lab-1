@@ -1,10 +1,13 @@
 const{ 
     returnTwo,
     greeting,
-    add
+    add,
+    multiply,
+    divide,
+    subtract
 } = require('./functions.js')
 
-test('returns 2', () => {
+test('Returns 2', () => {
     expect(returnTwo()).toBe(2)
 })
 
@@ -13,7 +16,23 @@ test('Greets', () => {
     expect(greeting('Jill')).toEqual("Hello, Jill.")
 })
 
-test('adds two numbers', () => {
-    expect(add(1, 2)).toEqual(3)
-    expect(add(5, 9)).toEqual(14)
+describe('Math Functions', () => {
+    
+    test('Adds two numbers', () => {
+        expect(add(1, 2)).toEqual(3)
+        expect(add(5, 9)).toEqual(14)
+        })
+
+    test('Multiplies two numbers', () => {
+        expect(multiply(1, 2)).toEqual(2)
+        })
+
+    test('Divides two numbers', () => {
+        expect(divide(6, 2)).toEqual(3)
+        })
+
+    test('Subtracts two numbers', () => {
+        expect(subtract(5, 2)).toEqual(3)
+        })
+
 })
